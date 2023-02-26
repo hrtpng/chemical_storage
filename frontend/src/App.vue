@@ -75,7 +75,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .search {
   padding: 10px 5px;
   margin: 5px;

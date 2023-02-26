@@ -8,7 +8,6 @@ import json
 class StorageView(View):
     def get(self, request):
         search = request.GET.get("search")
-        print(search)
         compounds = Compound.objects.all().filter(
             Q(title__contains=search)
             | Q(formula__contains=search)
