@@ -1,3 +1,4 @@
+magazyn.xlsx
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -109,6 +110,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+backend/env
 
 # Spyder project settings
 .spyderproject
