@@ -1,4 +1,23 @@
 <template>
+  <div class="header"><img src="logo.png" width=250>
+    <h2>KATALOG ODCZYNNIKÓW</h2>
+    <div class="buttons">
+      <button>ZALOGUJ SIĘ</button>
+      <button>KONTAKT</button>
+    </div>
+  </div>
+  <div class="title">KChMAiK UMK.Pracownia 94-95
+    <button class="btn-another-storage">Zmień</button>
+  </div>
+  <div class="instruction">
+    <ul><b>Do wyszukiwania odczynnika można użyć:</b> 
+      <li>numer CAS</li>
+      <li>angielska lub polska nazwa odczynnika</li>
+      <li>wzór sumaryczny (format: Na2CO3 x 10H2O)</li>
+    </ul>
+    <ul><b>Do wyszukiwania grup odczynników można także użyć słowa kluczowe, np.: Węglany, Ca2+, Wapń, CO32-</b>
+    </ul>
+  </div>
   <div class="container">
     <input
       type="text"
@@ -6,24 +25,24 @@
       v-model="searchText"
       placeholder="Wpisz tu..."
     />
-    <span v-if="storage.length">Elementów znaleziono: {{ storage.length }}</span>
+    <span v-if="storage.length"><br><br>Elementów znaleziono: {{ storage.length }}<br><br></span>
     <table v-if="storage.length" class="results">
       <thead>
         <tr>
-          <th>Formuła</th>
-          <th>Nazwa</th>
-          <th>CAS</th>
-          <th>Regał</th>
-          <th>Półka</th>
+          <th width="30%">Formuła</th>
+          <th width="30%">Nazwa</th>
+          <th width="20%">CAS</th>
+          <th width="10%">Regał</th>
+          <th width="10%">Półka</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="compound in storage" :key="compound.title">
           <td>{{ compound.formula }}</td>
           <td>{{ compound.title || textIfEmpty }}</td>
-          <td>{{ compound.cas || textIfEmpty }}</td>
-          <td>{{ compound.rack }}</td>
-          <td>{{ compound.shelf }}</td>
+          <td class="centered-obj">{{ compound.cas || textIfEmpty }}</td>
+          <td class="centered-obj">{{ compound.rack }}</td>
+          <td class="centered-obj">{{ compound.shelf }}</td>
         </tr>
       </tbody>
     </table>
@@ -71,20 +90,124 @@ export default {
 body {
   margin: 0;
   padding: 0;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Lato-Regular, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #DCE6Fa;
 }
+
+.header {
+  display: flex;
+  justify-content:space-between;
+  
+}
+
+.header h2 {
+  font-size: 35px;
+  text-align: center;
+  color: #004492;
+
+  
+}
+
+.title {
+  text-align: left;
+  color: white;
+  font-size: 25px;
+  padding: 15px;
+  margin-top: 10px;  
+  border-top: 10px solid #aad23f;
+  background-color: #004492;
+  letter-spacing: 1.5px;
+  display: flex;
+  justify-content:space-between;
+  
+}
+
+.btn-another-storage {
+  width: 3cm;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.btn-another-storage:hover {
+  background: #aad23f;
+	color: #004492;
+  border-radius: 4px;
+}
+
+
+.buttons {
+  float: right;
+  margin-top: 7px;
+  margin: 15px;
+}
+
+button {
+  padding: 25px;
+  font-size: 18px;
+  font-family: Lato-Regular, Arial, sans-serif;
+  border: 0;
+  color: #004492;
+  background-color: #DCE6Fa;
+}
+
+button:hover {
+	background: #004492;
+	color: #DCE6Fa;
+  border-radius: 2%;
+}
+
+.instruction {
+  color: #004492;
+  padding: 10px;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 2px;
+}
+
 .search {
+  color: #004492;
   padding: 10px 5px;
   margin: 5px;
   width: 98%;
+  
 }
+
+table {
+  border-collapse: collapse;
+}
+
 .results {
+  color: #004492;
   width: 100%;
-  margin: 10px 5px;
+  text-align: left;
 }
-.results td {
+
+.results th {
+  margin: 0;
+  border-bottom: 2px solid #004492;
+  padding-bottom: 15px;
   text-align: center;
 }
+
+.results td {
+  margin: 0;
+  border-bottom: 1px solid #004492;
+  /* border-left: 1px solid #004492; */
+  padding: 15px;
+}
+
+.centered-obj {
+  text-align: center;
+}
+
+span {
+  color: #004492;
+}
+
+h1 {
+  color: #004492;
+}
+
 </style>
