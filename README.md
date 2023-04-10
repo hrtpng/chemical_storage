@@ -1,5 +1,7 @@
 # Chemical Storage
 
+Chemical warehouse catalog. The front-end is developed using Vue.js, while the back-end uses Django framework. The catalog allows users to search for chemical reagents by name, chemical formula, CAS number, cations and anions present, as well as by English name.
+
 ### Main page
 ![image](https://drive.google.com/uc?export=view&id=1CujGZrVZgYzSPKXgY_DLLcTePt8ygJBV)
 
